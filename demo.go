@@ -15,6 +15,10 @@ func demo_two() {
 	Infof(context.Background(), "this is test 2...")
 }
 
+func other_caller() {
+	Infof(context.Background(), "is inner caller..")
+}
+
 func demo_three() {
 	cfgStr := "{\"path_file\":\"./test.log\",\"file_max_size_mb\":10,\"old_file_remain_day\":1,\"old_file_nums\":2,\"old_file_compress\":false,\"log_level\":\"info\"}"
 	cfg := ParseCfg(cfgStr)
@@ -22,6 +26,7 @@ func demo_three() {
 	Infof(context.Background(), "this is test 3...", "idfadfa")
 	////
 	Info(context.Background(), "is os ok....")
+	other_caller()
 
 }
 func main() {
