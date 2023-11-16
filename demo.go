@@ -2,30 +2,31 @@ package main
 
 import (
 	"context"
-	. "zap_demo/demo_one"
+
+	log_wrapper "github.com/achilsh/zap_log_wrapper/demo_one"
 )
 
 func demo_one() {
-	NewZapLogHandler()
-	ZError(context.Background(), "this is test....")
+	log_wrapper.NewZapLogHandler()
+	log_wrapper.ZError(context.Background(), "this is test....")
 }
 
 func demo_two() {
-	NewSugaredZapLogHandler(nil)
-	Infof(context.Background(), "this is test 2...")
+	log_wrapper.NewSugaredZapLogHandler(nil)
+	log_wrapper.Infof(context.Background(), "this is test 2...")
 }
 
 func other_caller() {
-	Infof(context.Background(), "is inner caller..")
+	log_wrapper.Infof(context.Background(), "is inner caller..")
 }
 
 func demo_three() {
 	cfgStr := "{\"path_file\":\"./test.log\",\"file_max_size_mb\":10,\"old_file_remain_day\":1,\"old_file_nums\":2,\"old_file_compress\":false,\"log_level\":\"info\"}"
-	cfg := ParseCfg(cfgStr)
-	NewSugaredZapLogHandler(cfg)
-	Infof(context.Background(), "this is test 3...", "idfadfa")
+	cfg := log_wrapper.ParseCfg(cfgStr)
+	log_wrapper.NewSugaredZapLogHandler(cfg)
+	log_wrapper.Infof(context.Background(), "this is test 3...", "idfadfa")
 	////
-	Info(context.Background(), "is os ok....")
+	log_wrapper.Info(context.Background(), "is os ok....")
 	other_caller()
 
 }

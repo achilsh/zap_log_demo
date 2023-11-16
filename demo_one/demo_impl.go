@@ -1,11 +1,12 @@
-package demo_one
+package log_wrapper
 
 import (
 	"context"
+	"os"
+
 	"github.com/natefinch/lumberjack"
 	"go.uber.org/zap"
 	"go.uber.org/zap/zapcore"
-	"os"
 )
 
 type ZapLog struct {

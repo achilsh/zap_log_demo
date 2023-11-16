@@ -1,4 +1,4 @@
-package demo_one
+package log_wrapper
 
 import (
 	"encoding/json"

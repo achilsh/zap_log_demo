@@ -1,4 +1,4 @@
-module zap_demo
+module github.com/achilsh/zap_log_wrapper
 
 go 1.20
 
