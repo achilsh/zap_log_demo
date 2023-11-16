@@ -3,7 +3,7 @@ package main
 import (
 	"context"
 
-	log_wrapper "github.com/achilsh/zap_log_wrapper/demo_one"
+	log_wrapper "github.com/achilsh/zap_log_demo/demo_one"
 )
 
 func demo_one() {
